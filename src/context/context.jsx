@@ -9,7 +9,7 @@ const ContextProvider = (props) => {
     const [input, setInput] = useState(""); //to save input data
     const [recentPrompt, setRecentPrompt] = useState(""); //to save data when sent button is clicked and display in main component
     const [prevPrompts, setPrevPrompts] = useState([]); //to store the input history
-    const [showResult, setShowResult] = useState(false); //hide greet text 
+    const [showResult, setShowResult] = useState(false); //hide greet text (cards)
     const [loading, setLoading] = useState(false); //to show loading animation
     const [resultData, setResultData] = useState(""); //to display result on web page
 

@@ -6,7 +6,7 @@ export const Context = createContext();
 
 const ContextProvider = (props) => {
 
-    const [input, setInput] = useState(""); //to save input data
+    const [input, setInput] = useState(""); //to save input data or in easy language we can say tha whatever we type is displayed on the screen is srtored in  the input variable
     const [recentPrompt, setRecentPrompt] = useState(""); //to save data when sent button is clicked and display in main component
     const [prevPrompts, setPrevPrompts] = useState([]); //to store the input history
     const [showResult, setShowResult] = useState(false); //hide greet text (cards)
@@ -26,7 +26,7 @@ const ContextProvider = (props) => {
 
     const onSent = async (prompt) => {
 
-        setResultData(""); //so that prev response is removed from the state variable
+        setResultData(""); //so t  hat prev response is removed from the state variable
         setLoading(true);
         setShowResult(true);
         let response;

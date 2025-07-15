@@ -10,13 +10,13 @@ const Main = () => {
     return (
         <div className="main">
             <div className="nav">
-                <p>Gemini</p>
+                <p>Gemi</p>
                 <img src={assets.user_icon} alt='' />
             </div>
             <div className="main-container">
                 {!showResult
                     ? <>
-                        <div className="greet"> 
+                        <div className="greet">
                             <p><span>Hello,Dev.</span></p>
                             <p>How can I help you today?</p>
                         </div>
@@ -60,13 +60,17 @@ const Main = () => {
 
                 <div className="main-bottom">
                     <div className="search-box">
-                        <input onChange={(e) => setInput(e.target.value)} value={input} type='text' placeholder='Enter a prompt here' />
+                        <input onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => {
+                            if (e.key === "Enter" && input.trim() !== "") {
+                                onSent();
+                            }
+                        }} value={input} type='text' placeholder='Enter a prompt here' />
                         <div>
                             <img src={assets.gallery_icon} alt="" />
                             <img src={assets.mic_icon} alt="" />
                             {input
-                            ?<img onClick={() => onSent()} src={assets.send_icon} alt="" />
-                            :null}
+                                ? <img onClick={() => onSent()} src={assets.send_icon} alt="" />
+                                : null}
                         </div>
                     </div>
                     <p className="bottom-info">
